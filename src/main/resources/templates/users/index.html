@@ -7,19 +7,18 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${cliques} and ${cliques.size()}">No Cliques Yet!</p>
+<p th:unless="${users} and ${users.size()}">No Uers Yet!</p>
 
 <table class="table">
-
     <tr>
         <th>Name</th>
     </tr>
 
-    <tr th:each="clique : ${cliques}">
-        <td><a th:href="'clique/view/' + ${clique.id}" th:text="${clique.name}"></a></td>
+    <tr th:each="users : ${user}">
+        <td th:text="${user.name}"></td>
     </tr>
 </table>
-<a href="/clique/add/">Add A Clique</a>
+<a href="/user/add">Add Users</a>
 
 </body>
 </html>

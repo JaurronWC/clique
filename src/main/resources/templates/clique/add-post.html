@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+<p></p>
+
+<form th:object="${form}" method="post">
+
+    <div class="form-group">
+        <label th:for="postId">Post</label>
+        <select th:field="*{postId}">
+            <option th:each="post : *{posts}"
+                    th:value="${post.id}"
+                    th:text="${post.title}"></option>
+        </select>
+        <input type="hidden" name="cliqueId" th:value="*{clique.id}" />
+        <span th:errors="*{postId}" class="error"></span>
+    </div>
+    <p><input type="submit" value="Add post" /></p>
+</form>
+
+
+</body>
+</html>

@@ -52,7 +52,7 @@ public class CliqueController {
 
         if(errors.hasErrors()){
             model.addAttribute(clique);
-            return "clique/add"
+            return "clique/add";
         }
 
         cliqueDao.save(clique);

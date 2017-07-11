@@ -60,9 +60,10 @@ public class PostController {
             model.addAttribute("title", "Add Post");
             return "post/add";
 
-            postDao.save(newPost);
-            return "redirect:";
         }
+
+        postDao.save(newPost);
+        return "redirect:";
     }
 
     @RequestMapping(value = "remove", method = RequestMethod.GET)
